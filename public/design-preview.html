@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Preview | Krish Govind Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* Light Mode */
+            --color-primary: hsl(220, 70%, 50%);
+            --color-primary-hover: hsl(220, 70%, 40%);
+            --color-accent: hsl(330, 85%, 65%);
+            --color-accent-hover: hsl(330, 85%, 55%);
+            --color-accent-muted: hsla(330, 85%, 65%, 0.1);
+            --color-bg: hsl(0, 0%, 100%);
+            --color-bg-elevated: hsl(220, 20%, 97%);
+            --color-text: hsl(220, 15%, 15%);
+            --color-text-muted: hsl(220, 10%, 45%);
+            --color-border: hsl(220, 15%, 88%);
+
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-sans: 'Inter', system-ui, sans-serif;
+
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-24: 6rem;
+
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+
+            --transition: 150ms ease-out;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-primary: hsl(220, 70%, 60%);
+                --color-primary-hover: hsl(220, 70%, 70%);
+                --color-accent: hsl(330, 85%, 75%);
+                --color-accent-hover: hsl(330, 85%, 85%);
+                --color-accent-muted: hsla(330, 85%, 75%, 0.15);
+                --color-bg: hsl(220, 15%, 10%);
+                --color-bg-elevated: hsl(220, 15%, 14%);
+                --color-text: hsl(220, 15%, 90%);
+                --color-text-muted: hsl(220, 10%, 60%);
+                --color-border: hsl(220, 15%, 22%);
+            }
+        }
+
+        [data-theme="dark"] {
+            --color-primary: hsl(220, 70%, 60%);
+            --color-primary-hover: hsl(220, 70%, 70%);
+            --color-bg: hsl(220, 15%, 10%);
+            --color-bg-elevated: hsl(220, 15%, 14%);
+            --color-text: hsl(220, 15%, 90%);
+            --color-text-muted: hsl(220, 10%, 60%);
+            --color-border: hsl(220, 15%, 22%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        code {
+            font-family: var(--font-mono);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        /* Nav */
+        nav {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: rgba(var(--color-bg), 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-6);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Hero */
+        .hero {
+            padding: var(--space-24) 0;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--space-12);
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: var(--space-12) 0;
+            }
+        }
+
+        .profile-img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: var(--radius-lg);
+            background: var(--color-bg-elevated);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: var(--space-4);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            color: var(--color-primary);
+            margin-bottom: var(--space-6);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-4);
+            margin-top: var(--space-8);
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-top: var(--space-16);
+            border-left: 2px solid var(--color-border);
+            padding-left: var(--space-8);
+            position: relative;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-12);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-1 * var(--space-8) - 7px);
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            border: 4px solid var(--color-bg);
+        }
+
+        .timeline-item.active::before {
+            box-shadow: 0 0 0 4px hsla(220, 70%, 50%, 0.2);
+        }
+
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-1);
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .timeline-org {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+
+        /* Section */
+        section {
+            padding: var(--space-24) 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: var(--space-12);
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--color-border);
+        }
+
+        /* Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-8);
+        }
+
+        .card {
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img {
+            aspect-ratio: 16/9;
+            background: #eee;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: var(--space-6);
+        }
+
+        .card-title {
+            font-family: var(--font-mono);
+            font-size: 1.25rem;
+            margin-bottom: var(--space-1);
+        }
+
+        .card-subtitle {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-4);
+        }
+
+        .tag-row {
+            display: flex;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: var(--space-1) var(--space-2);
+            background: hsla(220, 70%, 50%, 0.1);
+            color: var(--color-primary);
+            border-radius: var(--radius-sm);
+        }
+
+        .tag-pink {
+            background: var(--color-accent-muted);
+            color: var(--color-accent);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-3) var(--space-6);
+            font-family: var(--font-mono);
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-hover);
+        }
+
+        .btn-accent {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background: var(--color-accent-hover);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: var(--color-border);
+            color: var(--color-text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .btn-outline-primary:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: var(--space-6);
+        }
+
+        .form-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-2);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--space-3);
+            background: var(--color-bg-elevated);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            color: var(--color-text);
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .pink-accent {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container" style="display: flex; justify-content: space-between; width: 100%;">
+            <a href="#" class="logo">krish.dev</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Work</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" id="theme-toggle">
+                    Theme
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <div class="profile-img">
+                <img src="/Users/krishg/.gemini/antigravity/brain/27f67f1c-c3a5-4a5d-b741-898c9acf7eff/profile_placeholder_1768180895881.png"
+                    alt="Krish Govind">
+            </div>
+            <div class="hero-content">
+                <h1>Krish Govind</h1>
+                <p class="hero-subtitle">Software Engineer II <span class="pink-accent">@Nike</span></p>
+                <p>Developing high-scale digital experiences. Focused on clean architecture, performance, and
+                    accessibility.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item active">
+                        <div class="timeline-date">Sep 2024 — Present</div>
+                        <div class="timeline-title">Software Engineer II</div>
+                        <div class="timeline-org">Nike</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Sep 2023 — Aug 2024</div>
+                        <div class="timeline-title">Software Engineer I</div>
+                        <div class="timeline-org">Nike</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2023 — Aug 2023</div>
+                        <div class="timeline-title">Software Engineer Intern</div>
+                        <div class="timeline-org">Converse (Nike, Inc.)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2022 — Aug 2022</div>
+                        <div class="timeline-title">Software Engineer Intern</div>
+                        <div class="timeline-org">Vanguard</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2021 — Aug 2021</div>
+                        <div class="timeline-title">Software Engineer Intern</div>
+                        <div class="timeline-org">United Health Group</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Graduated May 2024</div>
+                        <div class="timeline-title">B.S. Computer Science (Honors)</div>
+                        <div class="timeline-org">Rutgers University</div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/krishx02" class="btn btn-outline-primary">GitHub</a>
+                    <a href="https://www.linkedin.com/in/krish-govind-2002/" class="btn btn-outline">LinkedIn</a>
+                    <a href="#" class="btn btn-accent">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="project-grid">
+                <a href="#" class="card">
+                    <div class="card-img">
+                        <img src="/Users/krishg/.gemini/antigravity/brain/27f67f1c-c3a5-4a5d-b741-898c9acf7eff/ruraga_thumbnail_1768180909322.png"
+                            alt="RU RAGA">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">RU RAGA</h3>
+                        <p class="card-subtitle">Collegiate Competitive Dance Team</p>
+                        <div class="tag-row">
+                            <span class="tag">Leadership</span>
+                            <span class="tag tag-pink">Culture</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="card" style="opacity: 0.5;">
+                    <div class="card-img"
+                        style="display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size: 0.75rem;">
+                        Coming Soon
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Project Delta</h3>
+                        <p class="card-subtitle">Subheading describing the tech</p>
+                        <div class="tag-row">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input type="text" id="name" class="form-input" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" class="form-input" placeholder="How can I help?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer style="padding: var(--space-12) 0; border-top: 1px solid var(--color-border); margin-top: var(--space-24);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-muted);">
+                &copy; 2026 Krish Govind. Built with intention.
+            </p>
+            <div class="social-links" style="margin-top: 0;">
+                <a href="#"
+                    style="color: var(--color-text-muted); text-decoration: none; font-family: var(--font-mono); font-size: 0.75rem;">GitHub</a>
+                <a href="#"
+                    style="color: var(--color-text-muted); text-decoration: none; font-family: var(--font-mono); font-size: 0.75rem;">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        toggle.addEventListener('click', () => {
+            const currentTheme = root.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            root.setAttribute('data-theme', newTheme);
+        });
+
+        // Match system preference initially if no data-theme is set
+        if (!root.getAttribute('data-theme')) {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            // root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        }
+    </script>
+</body>
+
+</html>
