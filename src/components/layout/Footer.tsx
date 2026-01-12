@@ -1,8 +1,9 @@
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Footer.css';
 
 const SOCIAL_LINKS = [
-    { href: 'https://linkedin.com/in/krish-govind', label: 'LinkedIn', icon: '💼' },
-    { href: 'https://github.com/krishx02', label: 'GitHub', icon: '🐙' },
+    { href: 'https://linkedin.com/in/krish-govind', label: 'LinkedIn', icon: <FaLinkedin size={20} /> },
+    { href: 'https://github.com/krishx02', label: 'GitHub', icon: <FaGithub size={20} /> },
 ];
 
 export function Footer() {

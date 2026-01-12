@@ -1,5 +1,7 @@
 import { useTheme } from './hooks/useTheme';
 import { Layout } from './components/layout/Layout';
+import { Hero } from './components/sections/Hero';
+import { About } from './components/sections/About';
 import './styles/tokens.css';
 import './styles/reset.css';
 import './styles/global.css';
@@ -10,14 +12,12 @@ function App() {
   return (
     <Layout theme={theme} onThemeToggle={toggleTheme}>
       <div className="container">
-        <section id="about" className="section">
-          <h1>Krish Govind</h1>
-          <p className="text-muted">Software Engineer II @ Nike</p>
-          <p style={{ marginTop: 'var(--space-4)' }}>
-            Welcome to my portfolio. This is a placeholder for the hero section.
-          </p>
-        </section>
+        <Hero />
+      </div>
 
+      <About />
+
+      <div className="container">
         <section id="projects" className="section">
           <h2>Selected Work</h2>
           <p className="text-muted">Projects coming soon...</p>
