@@ -39,20 +39,35 @@ export function Hero() {
                     <div className="hero__tagline">
                         <Typewriter
                             options={{
-                                strings: [
-                                    'Avid gymgoer',
-                                    'Nature lover',
-                                    'Amateur photographer',
-                                    'Food connoisseur',
-                                    'Son',
-                                    'Brother',
-                                    'Passionate engineer'
-                                ],
                                 autoStart: true,
                                 loop: true,
                                 delay: 50,
                                 deleteSpeed: 30,
-                                pauseFor: 4000,
+                            }}
+                            onInit={(typewriter) => {
+                                typewriter
+                                    .typeString('Avid gymgoer')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('Nature lover')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('Amateur photographer')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('Food connoisseur')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('Son')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('Brother')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .typeString('Passionate engineer')
+                                    .pauseFor(2000)
+                                    .deleteAll()
+                                    .start();
                             }}
                         />
                     </div>
