@@ -14,7 +14,7 @@ export const skillsData: SkillCategory[] = [
     },
     {
         name: 'Developer Tools',
-        skills: ['Git', 'Docker', 'Kubernetes', 'Jenkins', 'Terraform', 'Vite', 'VS Code'],
+        skills: ['Git', 'Vite', 'Terraform', 'VS Code', 'Antigravity', 'Cursor', 'Opencode'],
     },
     {
         name: 'Cloud Infrastructure',
