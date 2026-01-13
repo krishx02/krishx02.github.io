@@ -14,7 +14,7 @@ export const timelineData: TimelineEntry[] = [
         id: 'nike-se2',
         title: 'Software Engineer II',
         organization: 'Nike',
-        startDate: 'Sep 2024',
+        startDate: 'Sep 2025',
         endDate: null,
         type: 'work',
         bullets: [
@@ -28,8 +28,8 @@ export const timelineData: TimelineEntry[] = [
         id: 'nike-se1',
         title: 'Software Engineer I',
         organization: 'Nike',
-        startDate: 'Sep 2023',
-        endDate: 'Aug 2024',
+        startDate: 'Sep 2024',
+        endDate: 'Aug 2025',
         type: 'work',
         bullets: [
             'Built full-stack features for Nike.com checkout experience',
