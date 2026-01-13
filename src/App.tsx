@@ -3,6 +3,9 @@ import { useTheme } from './hooks/useTheme';
 import { Layout } from './components/layout/Layout';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
+import { Projects } from './components/sections/Projects';
+import { Blog } from './components/sections/Blog';
+import { Contact } from './components/sections/Contact';
 import './styles/tokens.css';
 import './styles/reset.css';
 import './styles/global.css';
@@ -16,22 +19,11 @@ function HomePage() {
 
       <About />
 
-      <div className="container">
-        <section id="projects" className="section">
-          <h2>Selected Work</h2>
-          <p className="text-muted">Projects coming soon...</p>
-        </section>
+      <Projects />
 
-        <section id="blog" className="section">
-          <h2>Blog</h2>
-          <p className="text-muted">Posts coming soon...</p>
-        </section>
+      <Blog />
 
-        <section id="contact" className="section">
-          <h2>Contact</h2>
-          <p className="text-muted">Get in touch...</p>
-        </section>
-      </div>
+      <Contact />
     </>
   );
 }
@@ -44,6 +36,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
         {/* Add more routes here as needed */}
       </Routes>
     </Layout>

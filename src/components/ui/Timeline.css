@@ -32,7 +32,7 @@
     transform: translateX(-50%);
     width: 2px;
     height: calc(100% - 0.5rem);
-    background-color: var(--color-border);
+    background-color: var(--color-accent);
 }
 
 .timeline__item--last .timeline__line::after {
@@ -154,7 +154,7 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: var(--color-accent);
 }
 
 .timeline__bullet:last-child {

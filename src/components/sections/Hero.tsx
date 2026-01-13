@@ -1,5 +1,5 @@
 import Typewriter from 'typewriter-effect';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaDownload } from 'react-icons/fa';
 import { Timeline } from '../ui/Timeline';
 import { timelineData } from '../../data/timeline';
 import { skillsData } from '../../data/skills';
@@ -87,6 +87,16 @@ export function Hero() {
                                 <span>{link.label}</span>
                             </a>
                         ))}
+                        <a
+                            href="/resume.pdf"
+                            className="hero__social-link"
+                            download
+                            aria-label="Download Resume"
+                            style={{ '--hover-color': 'var(--color-primary)' } as React.CSSProperties}
+                        >
+                            <span className="hero__social-icon"><FaDownload size={18} /></span>
+                            <span>Resume</span>
+                        </a>
                     </div>
                 </div>
             </div>
