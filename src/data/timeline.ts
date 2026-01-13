@@ -18,7 +18,6 @@ export const timelineData: TimelineEntry[] = [
         endDate: null,
         type: 'work',
         bullets: [
-            'Led migration of checkout microservices to modern architecture',
             'Implemented an asynchronous job processing framework using AWS SQS, Lambda, and DynamoDB for batch processing',
             'Mentoring junior engineers + team on best practices in backend architecture patterns',
             'and more'
