@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import { useTheme } from './hooks/useTheme';
 import { Layout } from './components/layout/Layout';
 import { Hero } from './components/sections/Hero';
@@ -6,11 +7,9 @@ import './styles/tokens.css';
 import './styles/reset.css';
 import './styles/global.css';
 
-function App() {
-  const { theme, toggleTheme } = useTheme();
-
+function HomePage() {
   return (
-    <Layout theme={theme} onThemeToggle={toggleTheme}>
+    <>
       <div className="container">
         <Hero />
       </div>
@@ -33,6 +32,20 @@ function App() {
           <p className="text-muted">Get in touch...</p>
         </section>
       </div>
+    </>
+  );
+}
+
+function App() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    <Layout theme={theme} onThemeToggle={toggleTheme}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+        {/* Add more routes here as needed */}
+      </Routes>
     </Layout>
   );
 }
