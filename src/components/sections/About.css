@@ -71,3 +71,28 @@
         font-size: var(--text-xl);
     }
 }
+
+.about__quote {
+    margin-top: var(--space-6);
+    padding: var(--space-6);
+    border-left: 4px solid var(--color-primary);
+    background: var(--color-bg);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.about__quote-text {
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-text);
+    display: block;
+    margin-bottom: var(--space-3);
+    line-height: var(--leading-relaxed);
+}
+
+.about__quote-author {
+    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+    color: var(--color-text-muted);
+    display: block;
+    text-align: right;
+}
