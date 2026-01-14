@@ -7,6 +7,7 @@ export interface Project {
     githubUrl?: string;
     liveUrl?: string;
     featured?: boolean;
+    comingSoon?: boolean;
 }
 
 export const projectsData: Project[] = [
@@ -16,6 +17,7 @@ export const projectsData: Project[] = [
         description: 'Contributed to the development of scalable microservices for Nike\'s global e-commerce platform, handling millions of transactions daily.',
         technologies: ['Java', 'Spring Boot', 'Kubernetes', 'AWS'],
         featured: true,
+        comingSoon: true,
     },
     {
         id: 'portfolio-site',
@@ -25,6 +27,7 @@ export const projectsData: Project[] = [
         githubUrl: 'https://github.com/krishx02/krishx02.github.io',
         liveUrl: 'https://krishx02.github.io',
         featured: true,
+        comingSoon: true,
     },
     {
         id: 'data-pipeline',
@@ -32,5 +35,6 @@ export const projectsData: Project[] = [
         description: 'Built a real-time data processing pipeline for analytics and monitoring, processing millions of events per minute.',
         technologies: ['Python', 'Apache Kafka', 'PostgreSQL', 'Docker'],
         featured: true,
+        comingSoon: true,
     },
 ];

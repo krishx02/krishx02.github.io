@@ -4,36 +4,36 @@ export interface BlogPost {
     title: string;
     excerpt: string;
     date: string;
-    readTime: string;
-    tags: string[];
+    readTime?: string;
+    tags?: string[];
+    comingSoon?: boolean;
 }
 
 export const blogPostsData: BlogPost[] = [
     {
-        id: 'getting-started-with-react',
-        slug: 'getting-started-with-react',
-        title: 'Getting Started with React in 2024',
-        excerpt: 'A comprehensive guide to starting your React journey with modern best practices and tooling.',
-        date: '2024-01-15',
-        readTime: '5 min read',
-        tags: ['React', 'JavaScript', 'Tutorial'],
+        id: 'building-personal-portfolio',
+        slug: 'building-personal-portfolio',
+        title: 'Building My Personal Portfolio',
+        excerpt: 'A deep dive into the tech stack and design choices behind my personal portfolio website.',
+        date: '2026-01-14',
+        readTime: '10 min read',
+        tags: ['React', 'Portfolio', 'Design System'],
+        comingSoon: true,
     },
     {
-        id: 'typescript-tips',
-        slug: 'typescript-tips',
-        title: 'TypeScript Tips for Better Code',
-        excerpt: 'Practical TypeScript tips that will make your code more maintainable and type-safe.',
+        id: 'lorem-ipsum-1',
+        slug: 'lorem-ipsum-1',
+        title: 'Lorem Ipsum Dolor',
+        excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         date: '2024-01-10',
-        readTime: '8 min read',
-        tags: ['TypeScript', 'Best Practices'],
+        comingSoon: true,
     },
     {
-        id: 'microservices-at-scale',
-        slug: 'microservices-at-scale',
-        title: 'Building Microservices at Scale',
-        excerpt: 'Lessons learned from building and scaling microservices architecture at a large enterprise.',
+        id: 'lorem-ipsum-2',
+        slug: 'lorem-ipsum-2',
+        title: 'Lorem Ipsum Dolor',
+        excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         date: '2024-01-05',
-        readTime: '12 min read',
-        tags: ['Architecture', 'Microservices', 'AWS'],
+        comingSoon: true,
     },
 ];

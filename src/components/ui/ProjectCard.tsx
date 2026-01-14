@@ -21,6 +21,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </div>
             )}
 
+            {project.comingSoon && (
+                <div className="project-card__badge">Coming Soon</div>
+            )}
+
             <div className="project-card__content">
                 <h3 className="project-card__title">{project.title}</h3>
                 <p className="project-card__description">{project.description}</p>

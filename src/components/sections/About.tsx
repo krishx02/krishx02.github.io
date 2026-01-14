@@ -10,7 +10,8 @@ export function About() {
                     <p className="about__text">
                         I'm a software engineer passionate about building products that make a real difference.
                         Currently at Nike, I engineer internal platforms that help bring innovative products
-                        to customers worldwide.
+                        to customers worldwide. I’ve been fortunate to be entrusted with greater responsibility
+                        early on, leading to a promotion within my first year.
                     </p>
 
                     <p className="about__text">
