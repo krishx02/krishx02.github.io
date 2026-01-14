@@ -36,7 +36,7 @@ export const timelineData: TimelineEntry[] = [
             'Built a modular React.js/TypeScript SPA; defined and deployed frontend infrastructure with AWS CDK to manage manufacturing workflows and automate communications',
             'Spearheaded a Dynatrace observability framework that was adopted as the organization-wide standard; engineered end-to-end instrumentation for logs, metrics, and traces across all serverless services including AWS Lambda, DynamoDB, SNS, SQS, API Gateway, EventBridge, and S3',
             'Integrated Okta-based entitlements; conditioned React component loading on user permissions and enforced access logic in backend notification services using Jotai',
-            'Improved accessibility across SMx — added ARIA labels, keyboard navigation, and screen-reader support, empowering the team to build inclusively'
+            'Championed inclusive design by upgrading the platform to WCAG AAA standards; implemented ARIA support and keyboard navigation while establishing accessibility best practices for the engineering team.'
         ],
     },
     {
