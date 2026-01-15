@@ -82,7 +82,8 @@ export function Contact() {
 
             setStatus('success');
             setFormData({ name: '', email: '', message: '' });
-        } catch {
+        } catch (error) {
+            console.error('EmailJS Error:', error);
             setStatus('error');
         }
     };
