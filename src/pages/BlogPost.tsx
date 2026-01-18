@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 
 // Import MDX blog posts
-import AntigravityPost from '../content/blog/antigravity-vs-cursor-vs-opencode.mdx';
+import AntigravityPost from '../content/blog/building-portfolio-with-antigravity-review.mdx';
 
 import './BlogPost.css';
 
 // Map slugs to MDX components
 const blogPosts: Record<string, React.ComponentType> = {
-    'antigravity-vs-cursor-vs-opencode': AntigravityPost,
+    'building-portfolio-with-antigravity-review': AntigravityPost,
 };
 
 export function BlogPost() {

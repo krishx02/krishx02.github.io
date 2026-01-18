@@ -11,8 +11,8 @@ export interface BlogPost {
 
 export const blogPostsData: BlogPost[] = [
     {
-        id: 'antigravity-vs-cursor-vs-opencode',
-        slug: 'antigravity-vs-cursor-vs-opencode',
+        id: '1',
+        slug: 'building-portfolio-with-antigravity-review',
         title: 'Building My Portfolio with Antigravity: A Hands-On Review',
         excerpt: 'I built my personal site using Antigravity—and learned a lot about how it stacks up against the competition.',
         date: '2026-01-18',
