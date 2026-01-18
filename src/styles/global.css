@@ -95,6 +95,14 @@ a:hover {
     padding-block: var(--space-16);
 }
 
+/* Scroll margin for fixed header */
+#about,
+#projects,
+#blog,
+#contact {
+    scroll-margin-top: var(--header-height);
+}
+
 /* Screen reader only */
 .sr-only {
     position: absolute;

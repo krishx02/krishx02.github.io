@@ -11,14 +11,14 @@ export interface BlogPost {
 
 export const blogPostsData: BlogPost[] = [
     {
-        id: 'building-personal-portfolio',
-        slug: 'building-personal-portfolio',
-        title: 'Building My Personal Portfolio',
-        excerpt: 'A deep dive into the tech stack and design choices behind my personal portfolio website.',
-        date: '2026-01-14',
-        readTime: '10 min read',
-        tags: ['React', 'Portfolio', 'Design System'],
-        comingSoon: true,
+        id: 'antigravity-vs-cursor-vs-opencode',
+        slug: 'antigravity-vs-cursor-vs-opencode',
+        title: 'Building My Portfolio with Antigravity: A Hands-On Review',
+        excerpt: 'I built my personal site using Antigravity—and learned a lot about how it stacks up against the competition.',
+        date: '2026-01-18',
+        readTime: '5 min read',
+        tags: ['Agentic AI', 'Developer Tools', 'Antigravity'],
+        comingSoon: false,
     },
     {
         id: 'lorem-ipsum-1',

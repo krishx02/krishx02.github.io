@@ -8,10 +8,10 @@ interface HeaderProps {
 }
 
 const NAV_LINKS = [
-    { href: '#about', label: 'About Me' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#blog', label: 'Blog' },
-    { href: '#contact', label: 'Contact' },
+    { href: '/#about', label: 'About Me' },
+    { href: '/#projects', label: 'Projects' },
+    { href: '/#blog', label: 'Blog' },
+    { href: '/#contact', label: 'Contact' },
 ];
 
 export function Header({ theme, onThemeToggle }: HeaderProps) {

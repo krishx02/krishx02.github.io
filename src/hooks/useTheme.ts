@@ -7,12 +7,9 @@ export function useTheme() {
     // Check localStorage first
     const stored = localStorage.getItem('theme') as Theme | null;
     if (stored) return stored;
-    
-    // Then check system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
-    }
-    return 'light';
+
+    // Default to dark mode
+    return 'dark';
   });
 
   useEffect(() => {
@@ -24,7 +21,7 @@ export function useTheme() {
   // Listen for system preference changes
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     const handleChange = (e: MediaQueryListEvent) => {
       // Only change if user hasn't explicitly set a preference
       const stored = localStorage.getItem('theme');
